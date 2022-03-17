@@ -1,0 +1,30 @@
+{% extends "adminbasefront.html.twig" %}
+{% block body %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-left align-top" scope="col">
+                    Niveaux
+                </th>
+        <p>
+            <a href="{{ path('adminniveau.ajout') }}" class="btn btn-primary">Ajouter un niveau
+            </a>
+        </p>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ni in niveaux %}
+                <tr>
+                    <td>
+                        <h5 class="text-info">
+                            {{ ni.niveau }}
+                        </h5>
+                    </td>
+                    <td>
+                        <a href="{{ path('adminniveau.suppr', {id:ni.id}) }}" class="btn btn-secondary", class="btn btn-danger" onclick="return confirm('Valider la suppression de {{ni.niveau}}')">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

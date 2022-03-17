@@ -1,0 +1,15 @@
+{% extends "adminbasefront.html.twig" %}
+{% block body %}
+    <p class="mt-3">
+        <h3>Editions de la formation</h3>
+    </p>
+    {{ form_start(formformation) }}
+        {{ form_widget(formformation) }}
+        <h3>Category</h3>
+        <div class="category">
+            {{ form_row(formformation.idniveau) }}
+        </div>
+    {{ form_end(formformation) }}
+    
+    
+{% endblock %}
